@@ -35,6 +35,9 @@ while start:
         start=False
         scoreboard.game_over()
 
+    if int(scoreboard.score) > int(scoreboard.read_txt_score()):
+        scoreboard.write_txt_score(scoreboard.score)
+        scoreboard.add_new_high_score()
     #detect colision with tail
     for segment in snake.segments:
         if segment == snake.head:
